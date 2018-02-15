@@ -1,0 +1,82 @@
+$input_bg_color: rgba(0, 0, 0, 0.16);
+$border: #ffffff solid 1px;
+$shadow: #431028 0 0 5px;
+$font: 1em;
+$w: 400px;
+$br: 5px;
+
+body{
+  background-image: url("../img/christmas-dark.png");
+}
+
+.container{
+  width: $w;
+  margin: 15vh auto auto;
+}
+
+.inputs{
+  background-color: $input_bg_color;
+  border: #ffffff solid 1px;
+  color: #ffffff;
+  box-sizing: border-box;
+  width: $w;
+  font-size: $font;
+  text-align: center;
+  margin: 10px 0;
+  padding: 3px 0 3px 0;
+  border-radius: $br;
+}
+
+#sumb, #sumb_2{
+  width: $w;
+  font-size: $font;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#ch{
+  position:absolute;
+  top:0;
+  left:0;
+  padding:15px;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  display:none;
+  z-index: 100;
+  text-align: center;
+  border-radius: $br;
+}
+
+#user_choice{
+  background-color: $input_bg_color;
+  border: #ffffff solid 1px;
+  color: #ffffff;
+  box-sizing: border-box;
+  width: $w - 50px;
+  font-size: $font;
+  text-align: center;
+  margin: 10px 0;
+  padding: 3px 0 3px 0;
+  border-radius: $br;
+}
+
+#voice{
+  font-size: $font + .2em;
+  width: 46px;
+  margin-left: 0;
+}
+
+.message{
+  background-color: $input_bg_color;
+  border: $border;
+  color: #ffffff;
+  box-sizing: border-box;
+  width: $w;
+  font-size: $font*2;
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px 0 5px 0;
+  border-radius: $br;
+  display: none;
+}
