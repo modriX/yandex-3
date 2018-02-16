@@ -1,4 +1,4 @@
-function getRandomColor() {
+﻿function getRandomColor() {
     return "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) +
         ", " + Math.floor(Math.random() * 256) + ")";
 }
@@ -21,47 +21,21 @@ function searchCheck(nameCity) {
 }
 
 function playUser() {
-    console.log('1');
     nameCity = getCity();
-    console.log('2');
     var firstLetter = nameCity.charAt(0);
-    console.log('3');
     if(!unchecked){
         firstLetter = firstLetter.toLowerCase();
-        console.log('4');
         if(lastCity.charAt(lastCity.length - 1).toLowerCase() != firstLetter){
-            console.log('5');
             return false;
         }
     }
-    console.log('6');
     firstLetter = firstLetter.toUpperCase();
-    console.log('7');
     nameCity = firstLetter.concat(nameCity.slice(1, nameCity.length));
-    console.log(nameCity + " 8");
     if(searchCheck(nameCity)){
-        console.log('9');
         lastLetter = nameCity.charAt(nameCity.length - 1).toUpperCase();
-        console.log(lastLetter + '10');
-        console.log('12');
         lastCity = JSON.parse(JSON.stringify(nameCity));
-        console.log('13');
         unchecked = false;
-        console.log(lastCity);
-        console.log(nameCity);
         change();
-        // console.log('14');
-        // nameCity = cityRobot(lastLetter);
-        // console.log(nameCity + ' 15');
-        // lastCity = JSON.parse(JSON.stringify(nameCity));
-        // console.log(lastCity + ' 15');
-        // wait(5000);
-        // console.log('16');
-        // change();
-        // console.log('17');
-        // setCity();
-        // console.log(lastCity);
-        // console.log(nameCity);
         return true;
     }
     return false;
@@ -69,18 +43,12 @@ function playUser() {
 }
 
 function robotPlay() {
-    console.log('14');
     nameCity = cityRobot(lastLetter);
     if (nameCity == "Нет возможных вариантов"){
         return false;
     }
-    console.log(nameCity + ' 15');
     lastCity = JSON.parse(JSON.stringify(nameCity));
-    console.log(lastCity + ' 15');
-    //wait(5000);
-    console.log('16');
     change();
-    console.log('17');
     setCity();
     console.log(lastCity);
     console.log(nameCity);

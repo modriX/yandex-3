@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Game</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
@@ -20,14 +20,9 @@
         lastCity = '';
         lastLetter = '';
 
-        //playRobot('П');
-        //findOnMap();
-
         $(document).ready(function(){
             document.getElementById("user_choice").value = '';
             document.getElementById("robot_choice").value = '';
-
-
             $.getJSON('js/db.json', function (data) {
                 for(var i = 0; i < data.city.length; i++){
                     city.push(data.city[i].name);
@@ -35,7 +30,6 @@
                 //checking
                 console.log(city[0]);
             });
-
             $('#robot_choice').hover(
                 function(){$('#robot_choice').mousemove(function (pos) {
                     $("#ch").css('left',(pos.pageX+20)+'px').css('top',(pos.pageY - 20)+'px').css('display','block');
@@ -43,7 +37,6 @@
                 }); },
                 function(){$('#ch').css('display','none');}
             );
-
             $('#user_choice').hover(
                 function(){$('#user_choice').mousemove(function (pos) {
                     $("#ch").css('left',(pos.pageX+20)+'px').css('top',(pos.pageY - 20)+'px').css('display','block');
@@ -51,7 +44,6 @@
                 }); },
                 function(){$('#ch').css('display','none');}
             );
-
             $('#sumb').click(
                 function () {
                     var res = playUser();
@@ -73,7 +65,6 @@
                     }
                 }
             );
-
             $('#sumb_2').click(
                 function () {
                     var res = robotPlay();
